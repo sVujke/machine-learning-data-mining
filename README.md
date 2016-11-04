@@ -1,4 +1,4 @@
-# machine-learning-data-mining
+# Machine Learning & Data Mining
 
 This repo contains all asignments from the Machine Learning and Data Mining course provided by the University of Koblenz-Landau.
 
