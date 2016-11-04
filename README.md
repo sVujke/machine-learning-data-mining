@@ -4,6 +4,6 @@ This repo contains all asignments from the Machine Learning and Data Mining cour
 
 The assignments are completed and submited as a group effort by:
 
-* B1rigitte Aznar
+* Brigitte Aznar
 * Daniel Kostić
 * Stefan Vujović
