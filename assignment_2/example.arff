@@ -1,0 +1,16 @@
+@RELATION patient
+
+@ATTRIBUTE patient NUMERIC
+@ATTRIBUTE heart NUMERIC
+@ATTRIBUTE blood NUMERIC
+@ATTRIBUTE class {0,1}
+
+@DATA
+1,0,0,0
+2,1,0,1
+3,0,1,0
+4,0,0,0
+5,1,0,1
+6,1,1,0
+7,1,0,1
+8,1,0,1
