@@ -128,18 +128,17 @@ def generate_trees(train, features, label, m=9):
 
 
 from collections import Counter
-def bagging(train, test, features, label, m):
+def bagging(train, test, features, label, m, dt_list):
     predictions = []
-    dt_list = generate_trees(train, features, label, m)
     df = pd.DataFrame()
+    # Iterate over decision trees
     for i in range(0, len(dt_list)):
         dt = dt_list[i]
-        predictions = dt.predict(test)
-        df[i] = pd.Series(predictions)
+        df[i] = pd.Series(dt.predict(test))
     for row in df.iterrows():
         c = Counter([pred for pred in row[1]])
         predictions.append(c.most_common()[0][0])
-        print("Iter {}, Pred: {}", i, predictions)
+        # print("Iter {}, Pred: {}", i, predictions)
     return predictions
 
 
