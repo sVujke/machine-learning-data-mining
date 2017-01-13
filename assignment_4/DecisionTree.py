@@ -17,6 +17,18 @@ def unique_counts(dataset, class_column="survived"):
 
 
 # In[8]:
+def gini_impurity(dataset):
+    total=len(dataset)
+    counts=unique_counts(dataset)
+    imp=0
+    for k1 in counts:
+        p1=float(counts[k1])/total
+        for k2 in counts:
+            if k1==k2: continue
+            p2=float(counts[k2])/total
+            imp+=p1*p2
+    return imp
+
 
 from math import log
 def entropy(dataset):
