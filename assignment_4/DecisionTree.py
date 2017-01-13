@@ -1,5 +1,6 @@
 
 import pandas as pd
+pd.options.mode.chained_assignment = None  # default='warn'
 def split_dataset(dataset, column, value):
     if isinstance(value,int) or isinstance(value,float):
         df1 = dataset[dataset[column]>=value]
