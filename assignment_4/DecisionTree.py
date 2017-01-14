@@ -1,6 +1,7 @@
 
 import pandas as pd
 pd.options.mode.chained_assignment = None  # default='warn'
+from sklearn.metrics import accuracy_score
 def split_dataset(dataset, column, value):
     if isinstance(value,int) or isinstance(value,float):
         df1 = dataset[dataset[column]>=value]
@@ -112,6 +113,8 @@ class DecisionTree:
             return tree_node(best_col_val[0], best_col_val[1], leftn, rightn)
         else:
             return tree_node(leaf=unique_counts(dataset))
+    def score(x, y):
+        return accuracy_score(self.predict(x), y)
         
 def printtree(tree, indent=''):
 
@@ -155,5 +158,14 @@ def bagging(train, test, features, label, m, dt_list):
     return predictions
 
 
-
-
+import random
+def generate_simple_trees(train, features, label, m=9, num_feats=3):
+    dt_list = []
+    for i in range(0,m):
+        sample = train.sample(len(train), replace=True)
+        random.shuffle(features)
+        features[0:num_feats]
+        dt = DecisionTree()
+        dt.fit(sample[features], sample[label])
+        dt_list.append(dt)
+    return dt_list
